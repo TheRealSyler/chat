@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "snowpack dev",
+    "s": "webpack serve",
     "build": "del ./dist && webpack --mode production"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "@snowpack/plugin-sass": "^1.1.1",
     "@snowpack/plugin-typescript": "^1.1.0",
     "@types/webpack": "^4.41.25",
+    "@types/webpack-dev-server": "^3.11.1",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "del-cli": "^3.0.1",
@@ -30,6 +32,12 @@
     "ts-node": "^9.1.0",
     "typescript": "^4.1.2",
     "webpack": "^5.9.0",
-    "webpack-cli": "^4.2.0"
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "peerjs": "^1.3.1",
+    "socket.io-client": "^3.0.3"
   }
 }
