@@ -1,6 +1,6 @@
 import { Configuration } from 'webpack';
 import { Configuration as Dev } from 'webpack-dev-server';
-import { resolve } from 'path';
+import { resolve, normalize } from 'path';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 // const WebpackBundleAnalyzer = require('webpack-bundle-analyzer');
@@ -9,10 +9,10 @@ interface C extends Dev, Configuration {}
 
 const config: C = {
   entry: {
-    index: `${__dirname}/src/index.ts`,
+    index: normalize( `${__dirname}/src/index.ts`),
   },
   output: {
-    path: resolve(__dirname, 'dist'),
+    path: normalize(resolve(__dirname, 'dist')),
     chunkFilename: '[name].chunk.js',
     filename: '[name].bundle.js',
     publicPath: '/',
@@ -20,7 +20,7 @@ const config: C = {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: `${__dirname}/public/index.html`,
+      template: normalize(`${__dirname}/public/index.html`),
     }),
     new ForkTsCheckerWebpackPlugin(),
     // new WebpackBundleAnalyzer.BundleAnalyzerPlugin()

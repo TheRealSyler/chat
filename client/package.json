@@ -6,7 +6,7 @@
   "scripts": {
     "start": "snowpack dev",
     "s": "webpack serve",
-    "build": "del ./dist && webpack --mode production"
+    "build": "del dist && webpack --mode production"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
